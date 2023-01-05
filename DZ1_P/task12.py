@@ -4,13 +4,9 @@
 # Он называет сумму этих чисел S и их произведение P.
 # Помогите Кате отгадать задуманные Петей числа.
 
-a, b = map(int, input().split())
-c = 0
-for i in range(a + b):
-    if c:
+s, p = (int(input()) for _ in '12')
+for x in range(1, 1001):
+    y = s -x
+    if x <= y and x * y == p:
+        print(x, y)
         break
-    for j in range(a + b):
-        if i + j == a and i * j == b:
-            c = 1
-            print(*sorted([i, j]))
-            break
